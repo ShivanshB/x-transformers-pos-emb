@@ -1927,8 +1927,11 @@ class TransformerWrapper(Module):
         use_cls_token = False,
         squeeze_out_last_dim = False,
         token_emb: TokenEmbedding | None = None,
+        name = None
     ):
         super().__init__()
+
+        self.name = name
 
         dim = attn_layers.dim
         emb_dim = default(emb_dim, dim)
